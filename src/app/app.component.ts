@@ -7,5 +7,5 @@ declare var AmCharts:any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'chart-app';
+
 }

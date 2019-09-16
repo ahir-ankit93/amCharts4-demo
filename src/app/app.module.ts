@@ -8,6 +8,7 @@ import { WorldMapGraphComponent } from './world-map-graph/world-map-graph.compon
 import { HashrateChartComponent } from './hashrate-chart/hashrate-chart.component';
 import { FoundBlocksChartComponent } from './found-blocks-chart/found-blocks-chart.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './header/header.component';
     WorldMapGraphComponent,
     HashrateChartComponent,
     FoundBlocksChartComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
