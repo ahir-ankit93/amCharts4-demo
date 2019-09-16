@@ -5,8 +5,6 @@ import { HashrateChartComponent } from './hashrate-chart/hashrate-chart.componen
 import { FoundBlocksChartComponent } from './found-blocks-chart/found-blocks-chart.component';
 
 
-const routes: Routes = [];
-
 @NgModule({
   imports: [ RouterModule.forRoot([
     { path: 'wmgc', component: WorldMapGraphComponent },
