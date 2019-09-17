@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AmChart} from '@amcharts/amcharts3-angular';
 declare var AmCharts: any;
 
 @Component({
@@ -8,144 +9,163 @@ declare var AmCharts: any;
 })
 export class HashrateChartComponent implements OnInit {
 
-  dataProvider = [
+
+  categoryFields = 'month';
+  dataProvider = [];
+  dataProviderYear = [
     {
-      'year': '2000',
-      'cars': 1587,
-      'motorcycles': 650,
-      'bicycles': 121
+      'year': '2014',
+      'Total': 10,
+      'Power Miners': 10
+    },
+    {
+      'year': '2015',
+      'Total': 0,
+      'Power Miners': 0
     }, {
-      'year': '1995',
-      'cars': 1567,
-      'motorcycles': 683,
-      'bicycles': 146
+      'year': '2016',
+      'Total': 20,
+      'Power Miners': 15
     }, {
-      'year': '1996',
-      'cars': 1617,
-      'motorcycles': 691,
-      'bicycles': 138
+      'year': '2017',
+      'Total': 10,
+      'Power Miners': 10
     }, {
-      'year': '1997',
-      'cars': 1630,
-      'motorcycles': 642,
-      'bicycles': 127
+      'year': '2018',
+      'Total': 30,
+      'Power Miners': 20
     }, {
-      'year': '1998',
-      'cars': 1660,
-      'motorcycles': 699,
-      'bicycles': 105
+      'year': '2019',
+      'Total': 45,
+      'Power Miners': 25
+    }
+  ];
+  dataProviderMonth = [
+    {
+      'month': 'sep',
+      'Total': 0,
+      'Power Miners': 0
+    },
+    {
+      'month': 'oct',
+      'Total': 0,
+      'Power Miners': 0
     }, {
-      'year': '1999',
-      'cars': 1683,
-      'motorcycles': 721,
-      'bicycles': 109
+      'month': 'nov',
+      'Total': 20,
+      'Power Miners': 15
     }, {
-      'year': '2000',
-      'cars': 1691,
-      'motorcycles': 737,
-      'bicycles': 112
+      'month': 'dec',
+      'Total': 10,
+      'Power Miners': 10
     }, {
-      'year': '2001',
-      'cars': 1298,
-      'motorcycles': 680,
-      'bicycles': 101
+      'month': 'jan',
+      'Total': 30,
+      'Power Miners': 20
     }, {
-      'year': '2002',
-      'cars': 1275,
-      'motorcycles': 664,
-      'bicycles': 97
+      'month': 'feb',
+      'Total': 45,
+      'Power Miners': 25
+    }
+  ];
+  dataProviderWeek = [
+    {
+      'week': 'one',
+      'Total': 0,
+      'Power Miners': 0
+    },
+    {
+      'week': 'two',
+      'Total': 0,
+      'Power Miners': 0
     }, {
-      'year': '2003',
-      'cars': 1246,
-      'motorcycles': 648,
-      'bicycles': 93
+      'week': 'three',
+      'Total': 20,
+      'Power Miners': 15
     }, {
-      'year': '2004',
-      'cars': 1218,
-      'motorcycles': 637,
-      'bicycles': 101
+      'week': 'four',
+      'Total': 30,
+      'Power Miners': 20
     }, {
-      'year': '2005',
-      'cars': 1213,
-      'motorcycles': 633,
-      'bicycles': 87
+      'week': 'five',
+      'Total': 20,
+      'Power Miners': 10
     }, {
-      'year': '2006',
-      'cars': 1199,
-      'motorcycles': 621,
-      'bicycles': 79
+      'week': 'six',
+      'Total': 35,
+      'Power Miners': 15
+    }
+  ];
+  dataProviderDay = [
+    {
+      'day': 'one',
+      'Total': 0,
+      'Power Miners': 0
+    },
+    {
+      'day': 'two',
+      'Total': 5,
+      'Power Miners': 10
     }, {
-      'year': '2007',
-      'cars': 1110,
-      'motorcycles': 210,
-      'bicycles': 81
+      'day': 'three',
+      'Total': 20,
+      'Power Miners': 15
     }, {
-      'year': '2008',
-      'cars': 1165,
-      'motorcycles': 232,
-      'bicycles': 75
+      'day': 'four',
+      'Total': 34,
+      'Power Miners': 24
     }, {
-      'year': '2009',
-      'cars': 1145,
-      'motorcycles': 219,
-      'bicycles': 88
+      'day': 'five',
+      'Total': 25,
+      'Power Miners': 25
     }, {
-      'year': '2010',
-      'cars': 1163,
-      'motorcycles': 201,
-      'bicycles': 82
-    }, {
-      'year': '2011',
-      'cars': 1180,
-      'motorcycles': 285,
-      'bicycles': 87
-    }, {
-      'year': '2012',
-      'cars': 1159,
-      'motorcycles': 277,
-      'bicycles': 71
+      'day': 'six',
+      'Total': 55,
+      'Power Miners': 45
     }
   ];
   graphs = [
     {
       'fillAlphas': 0.5,
       'lineAlpha': 0.5,
-      'title': 'Cars',
-      'valueField': 'cars',
-      'index': 2
-    }, {
-      'fillAlphas': 0.5,
-      'lineAlpha': 0.5,
-      'title': 'Motorcycles',
-      'valueField': 'motorcycles',
-      'index': 3
-    }, {
-      'fillAlphas': 0.5,
-      'lineAlpha': 0.5,
-      'title': 'Bicycles',
-      'valueField': 'bicycles',
+      'title': 'Total',
+      'valueField': 'Total',
       'index': 1
+    }, {
+      'fillAlphas': 0.5,
+      'lineAlpha': 0.5,
+      'title': 'Power Miners',
+      'valueField': 'Power Miners',
+      'index': 2
     }
   ];
+
+  chart: AmChart;
+  private categoryField: string;
 
   constructor() { }
 
   ngOnInit() {
 
+
+    this.dataProvider = this.dataProviderMonth;
+    this.categoryField = this.categoryFields;
+
     AmCharts.addInitHandler(function (chart) {
       // Reorder chart graph's based on their "index" value
-      chart.graphs.sort(function (a, b) {
+      chart.graphs.sort(function(a, b) {
         if (a.index == b.index) {
           return 0;
         }
         return a.index < b.index ? -1 : 1;
       });
     }, ["serial"]);
+
     /**
      * Make the chart
      */
 
-    let chart = AmCharts.makeChart('chartdiv', {
+    this.chart = AmCharts.makeChart('chartdiv', {
       type: 'serial',
       theme: 'light',
       legend: {
@@ -160,25 +180,85 @@ export class HashrateChartComponent implements OnInit {
         stackType: 'regular',
         gridAlpha: 0.07,
         position: 'left',
-        title: 'percent'
+        title: 'Hashrate'
       }],
       dataProvider: this.dataProvider,
       graphs: this.graphs,
-      plotAreaBorderAlpha: 0,
+      plotAreaBorderAlpha: 0.5,
       marginLeft: 0,
       marginBottom: 0,
       chartCursor: {
         cursorAlpha: 0,
         zoomable: false
       },
-      categoryField: 'year',
+      categoryField: this.categoryField,
       categoryAxis: {
         startOnAxis: true,
         axisColor: '#DADADA',
         gridAlpha: 0.07
       }
     });
+  }
 
+  onClick(type:string) {
+
+    if(type === "month"){
+      this.dataProvider = this.dataProviderMonth;
+      this.categoryFields = 'month';
+      this.onMakeCharts();
+    }
+    if(type === "year"){
+      this.dataProvider = this.dataProviderYear;
+      this.categoryFields = 'year';
+      this.onMakeCharts();
+    }
+    if(type === "week"){
+      this.dataProvider = this.dataProviderWeek;
+      this.categoryFields = 'week';
+      this.onMakeCharts();
+    }
+    if(type === "day"){
+      this.dataProvider = this.dataProviderDay;
+      this.categoryFields = 'day';
+      this.onMakeCharts();
+    }
+  }
+
+  onMakeCharts() {
+    this.chart = AmCharts.AmSerialChart('chartdiv', {
+
+      type: 'serial',
+      theme: 'light',
+      legend: {
+        align: 'center',
+        equalWidths: false,
+        periodValueText: 'total: [[value.sum]]',
+        valueAlign: 'left',
+        valueText: '[[value]] ([[percents]]%)',
+        valueWidth: 100
+      },
+      valueAxes: [{
+        stackType: 'regular',
+        gridAlpha: 0.07,
+        position: 'left',
+        title: 'Hashrate'
+      }],
+      dataProvider: this.chart.dataProvider,
+      graphs: this.graphs,
+      plotAreaBorderAlpha: 0.5,
+      marginLeft: 0,
+      marginBottom: 0,
+      chartCursor: {
+        cursorAlpha: 0,
+        zoomable: false
+      },
+      categoryField: this.chart.categoryField,
+      categoryAxis: {
+        startOnAxis: true,
+        axisColor: '#DADADA',
+        gridAlpha: 0.07
+      }
+    });
   }
 
 }

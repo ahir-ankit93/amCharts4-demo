@@ -28,10 +28,33 @@ export class FoundBlocksChartComponent implements OnInit {
     }, {
       year: 2013,
       income: 30.6,
+      expenses: 28.2
+    },
+    {
+      year: 2014,
+      income: 23.5,
+      expenses: 21.1
+    }, {
+      year: 2015,
+      income: 26.2,
+      expenses: 30.5
+    }, {
+      year: 2016,
+      income: 30.1,
+      expenses: 34.9
+    }, {
+      year: 2017,
+      income: 30.6,
+      expenses: 28.2
+    },
+    {
+      year: 2018,
+      income: 30.6,
       expenses: 28.2,
       dashLengthLine: 5
-    }, {
-      year: 2014,
+    },
+    {
+      year: 2019,
       income: 34.1,
       expenses: 32.9,
       dashLengthColumn: 5,
@@ -39,6 +62,40 @@ export class FoundBlocksChartComponent implements OnInit {
       additional: "(projection)"
     }
   ];
+
+  dataProviderMonth = [
+    {
+      month: "sep",
+      income: 23.5,
+      expenses: 21.1
+    }, {
+      month: "oct",
+      income: 26.2,
+      expenses: 30.5
+    }, {
+      month: "nov",
+      income: 30.1,
+      expenses: 34.9
+    }, {
+      month: "dec",
+      income: 29.5,
+      expenses: 31.1
+    }, {
+      month: "jan",
+      income: 30.6,
+      expenses: 28.2
+    },
+    {
+      month: "feb",
+      income: 23.5,
+      expenses: 21.1
+    }, {
+      month: "mar",
+      income: 30.1,
+      expenses: 34.9
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
@@ -46,7 +103,7 @@ export class FoundBlocksChartComponent implements OnInit {
     const chart = AmCharts.makeChart("chartdiv", {
       type: "serial",
       addClassNames: true,
-      theme: "none",
+      theme: "light",
       autoMargins: false,
       marginLeft: 30,
       marginRight: 8,

@@ -9,6 +9,8 @@ import { HashrateChartComponent } from './hashrate-chart/hashrate-chart.componen
 import { FoundBlocksChartComponent } from './found-blocks-chart/found-blocks-chart.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AmChartsModule
+    AmChartsModule,
+    AngularFontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

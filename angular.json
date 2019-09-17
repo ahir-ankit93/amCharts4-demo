@@ -27,7 +27,8 @@
               "src/styles.css",
               "./node_modules/amcharts3/amcharts/plugins/export/export.css",
               "./node_modules/ammap3/ammap/plugins/export/export.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",

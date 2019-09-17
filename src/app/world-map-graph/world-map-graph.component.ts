@@ -71,4 +71,9 @@ export class WorldMapGraphComponent implements OnInit {
     });
   }
 
+
+  onSearchClick(searchText: any){
+    console.log('button of search is clicked')
+  }
+
 }

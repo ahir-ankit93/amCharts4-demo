@@ -1,1 +1,19 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="input-group col-md-4 text-center"></div>
+    <div class = "input-group col-md-4 text-center">
+      <input type = "search" [(ngModel)] = "searchText" class = "form-control"
+             placeholder = "Search anywhere on the Map" aria-label = "search on world map"
+             aria-describedby = "basic-addon2">
+      <div class = "input-group-append">
+        <!--        <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>-->
+        <button class = "input-group-text" id = "btnsearch" (click) = "onSearchClick(searchText)"><i
+          class = "fa fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 <div id="chartdiv"></div>
