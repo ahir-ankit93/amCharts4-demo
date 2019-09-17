@@ -1,11 +1,11 @@
 <br>
 <div class="container">
   <div class="d-flex flex-row-reverse mb-4">
-    <div class="p-2" (click)="onClick('year')"> Year </div>
-    <div class="p-2" (click)="onClick('month')"> Month </div>
-    <div class="p-2" (click)="onClick('week')"> Week </div>
-    <div class="p-2" (click)="onClick('day')"> Day </div>
-    <div class="p-2"> <strong> Display By </strong> </div>
+    <div class="p-2" [ngClass]=" makeBold === 'y' ? 'font-weight-bold' : '' " (click)="onClick('y')"> Year </div>
+    <div class="p-2" [ngClass]=" makeBold === 'm' ? 'font-weight-bold' : '' " (click)="onClick('m')"> Month </div>
+    <div class="p-2" [ngClass]=" makeBold === 'w' ? 'font-weight-bold' : '' " (click)="onClick('w')"> Week </div>
+    <div class="p-2" [ngClass]=" makeBold === 'd' ? 'font-weight-bold' : '' " (click)="onClick('d')"> Day </div>
+    <div class="p-2 font-weight-lighter"> Display By   </div>
   </div>
 </div>
 <div id="chartdiv"></div>
