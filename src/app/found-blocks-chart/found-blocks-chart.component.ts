@@ -12,7 +12,21 @@ am4core.useTheme(am4themes_animated);
 })
 export class FoundBlocksChartComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  makeBold = 'm';
   dataProvider = [
+    {
+      year: 2006,
+      income: 3.5,
+      expenses: 1.1
+    }, {
+      year: 2007,
+      income: 16.2,
+      expenses: 10.5
+    }, {
+      year: 2008,
+      income: 20.1,
+      expenses: 24.9
+    },
     {
       year: 2009,
       income: 23.5,
@@ -114,6 +128,7 @@ export class FoundBlocksChartComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   onClick(type: string){
+    this.makeBold = type;
     switch (type) {
       case 'y':
         this.makeYearChart();
@@ -149,6 +164,24 @@ export class FoundBlocksChartComponent implements OnInit, AfterViewInit, OnDestr
       // Data for both series
       let data = [
         {
+          "year": "2005",
+          "income": 3.5,
+          "expenses": 1.1
+        }, {
+          "year": "2006",
+          "income": 16.2,
+          "expenses": 10.5
+        }, {
+          "year": "2007",
+          "income": 20.1,
+          "expenses": 24.9
+        },
+        {
+          "year": "2008",
+          "income": 23.5,
+          "expenses": 21.1
+        },
+        {
           "year": "2009",
           "income": 13.5,
           "expenses": 8.7
@@ -167,10 +200,32 @@ export class FoundBlocksChartComponent implements OnInit, AfterViewInit, OnDestr
         }, {
           "year": "2013",
           "income": 30.6,
+          "expenses": 28.2
+        },{
+          "year": "2014",
+          "income": 26.2,
+          "expenses": 10.5
+        }, {
+          "year": "2015",
+          "income": 40.1,
+          "expenses": 34.9
+        }, {
+          "year": "2016",
+          "income": 39.5,
+          "expenses": 31.1
+        }, {
+          "year": "2017",
+          "income": 29.5,
+          "expenses": 21.1
+        },
+        {
+          "year": "2018",
+          "income": 30.6,
           "expenses": 28.2,
           "lineDash": "5,5",
-        }, {
-          "year": "2014",
+        },
+        {
+          "year": "2019",
           "income": 34.1,
           "expenses": 32.9,
           "strokeWidth": 1,
@@ -252,11 +307,36 @@ export class FoundBlocksChartComponent implements OnInit, AfterViewInit, OnDestr
           "expenses": 31.1
         }, {
           "month": "may",
+          "income": 36.2,
+          "expenses": 30.5
+        }, {
+          "month": "jun",
+          "income": 40.1,
+          "expenses": 34.9
+        }, {
+          "month": "jul",
+          "income": 49.5,
+          "expenses": 31.1
+        }, {
+          "month": "aug",
+          "income": 40.1,
+          "expenses": 34.9
+        }, {
+          "month": "sep",
+          "income": 49.5,
+          "expenses": 31.1
+        }, {
+          "month": "oct",
+          "income": 40.1,
+          "expenses": 34.9
+        },
+        {
+          "month": "nov",
           "income": 30.6,
           "expenses": 28.2,
           "lineDash": "5,5",
         }, {
-          "month": "jun",
+          "month": "dec",
           "income": 34.1,
           "expenses": 32.9,
           "strokeWidth": 1,
